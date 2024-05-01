@@ -1,6 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
     height: 100%;
     display: flex;
@@ -8,6 +9,14 @@ body, html {
     justify-content: center; /* Centra el contenido horizontalmente */
     background-color: black;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2#color {
+    position: absolute; /* Coloca el encabezado de forma absoluta */
+    top: 0; /* Lo coloca en la parte superior del contenedor padre */
+    left: 50%; /* Lo centra horizontalmente */
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .menu {
@@ -41,29 +50,8 @@ body, html {
     color: greenyellow;
 }
 
-.navbar, .submenu {
-    list-style-type: none; /* Elimina los marcadores de lista */
-    padding: 0; /* Elimina el padding por defecto del navegador para las listas */
-    margin: 0; /* Elimina el margen por defecto del navegador para las listas */
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    left: 100%; /* Posiciona el submenú exactamente al final del texto del menú principal */
-    top: 0; /* Alinea el submenú con la parte superior del ítem del menú principal */
-    background-color: black;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    white-space: nowrap; /* Asegura que los textos de submenú no se rompan */
-}
-
-.submenu li {
-    padding: 10px 20px;
-    text-align: left;
-}
-
-.menu-item:hover .submenu {
-    display: block; /* Muestra el submenú al pasar el ratón sobre el ítem del menú */
+#color{
+    color: chartreuse;
 }
 section {
     position: absolute; /* Cambio de 'relative' a 'absolute' */
@@ -84,27 +72,27 @@ iframe {
 }
 
 
-
 @media (max-width: 768px) {
-    header .navbar {
-        flex-direction: column; /* Cambia la disposición a vertical */
-        align-items: flex-end; /* Alinea los elementos a la derecha */
+    header .navbar .submenu {
+        display: block; /* Hace que el submenú esté siempre visible */
+        position: static; /* Elimina la posición absoluta para que fluya como parte normal del documento */
+        width: 100%; /* Asegúrate de que ocupa todo el ancho disponible */
+        padding: 0; /* Opcional: ajusta el padding según necesites */
+        background-color: transparent; /* O quita el fondo para que se mezcle con el menú principal */
     }
 
-    header .navbar a {
-        font-size: 0.9em; /* Letras más pequeñas en tabletas */
-        padding-right: 10px; /* Añade algo de padding a la derecha */
+    header .navbar .submenu li {
+        padding: 5px 0; /* Ajusta el padding para los elementos del submenú */
+        text-align: left; /* Alineación del texto, si es necesario */
     }
 }
 
 @media (max-width: 480px) {
-    header .navbar {
-        flex-direction: column; /* Asegura que la disposición siga siendo vertical */
-        align-items: flex-end; /* Mantiene los elementos alineados a la derecha */
+    header .navbar .submenu {
+        display: block; /* Mantiene el submenú siempre visible también en teléfonos */
     }
 
-    header .navbar a {
-        font-size: 0.8em; /* Letras aún más pequeñas en teléfonos móviles */
-        padding-right: 10px; /* Consistencia en el padding a la derecha */
+    header .navbar .submenu li {
+        padding: 5px 0; /* Ajusta el padding para los elementos del submenú */
     }
 }
