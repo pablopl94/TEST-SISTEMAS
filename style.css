@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px; /* Ajusta el padding según la altura deseada para el header */
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    background-color: black;
+    z-index: 10;
+}
+
+header .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Asegura que la barra de navegación también esté centrada */
+}
+
+header .navbar li {
+    margin: 0 20px; /* Ajusta el espaciado como necesario */
+}
+
+header .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    transition: color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 00px;
+
+}
+
+header .navbar a:hover {
+    color: greenyellow;
+}
+
+section {
+    position: relative;
+    top: 130px; /* Ajusta según la altura de tu header */
+    width: 100%;
+    height: calc(100% - 130px);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    header .navbar {
+        flex-direction: column; /* Cambia la disposición a vertical */
+        align-items: flex-end; /* Alinea los elementos a la derecha */
+    }
+
+    header .navbar a {
+        font-size: 0.9em; /* Letras más pequeñas en tabletas */
+        padding-right: 10px; /* Añade algo de padding a la derecha */
+    }
+}
+
+@media (max-width: 480px) {
+    header .navbar {
+        flex-direction: column; /* Asegura que la disposición siga siendo vertical */
+        align-items: flex-end; /* Mantiene los elementos alineados a la derecha */
+    }
+
+    header .navbar a {
+        font-size: 0.8em; /* Letras aún más pequeñas en teléfonos móviles */
+        padding-right: 10px; /* Consistencia en el padding a la derecha */
+    }
+}
